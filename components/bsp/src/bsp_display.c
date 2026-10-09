@@ -168,6 +168,14 @@ esp_err_t bsp_display_init(void) {
     e = esp_lcd_new_panel_io_spi((esp_lcd_spi_bus_handle_t)BSP_LCD_SPI_HOST, &io_cfg, &s_io);
     if (e != ESP_OK) { ESP_LOGE(TAG, "panel_io 创建失败: %s", esp_err_to_name(e)); goto fail; }
 
+    // ST7789 唤醒保障：若此前进入过 deep sleep 并在入睡前向 ST7789 发送了 SLPIN (0x10)，
+    // 面板此时处于停振休眠状态。由于硬件复位引脚未接 MCU (BSP_LCD_RST = -1)，无法通过引脚硬复位；
+    // 若在停振休眠状态下直接调用 esp_lcd_panel_reset() 发送 0x01 (SWRESET)，处于停振状态的面板不仅
+    // 无法执行软复位，还会造成 SPI 命令解码状态机死锁。因此在创建面板和复位前，先发送 0x11 (SLPOUT)
+    // 退出休眠，并延时 120ms 确保内部振荡器与电荷泵完全稳定。
+    esp_lcd_panel_io_tx_param(s_io, 0x11, NULL, 0); // 0x11: SLPOUT
+    vTaskDelay(pdMS_TO_TICKS(120));
+
     esp_lcd_panel_dev_config_t dev = {
         .reset_gpio_num = BSP_LCD_RST,          // -1 → SWRESET 软复位
         .rgb_ele_order  = LCD_RGB_ELEMENT_ORDER_RGB,
@@ -256,6 +264,7 @@ esp_err_t bsp_display_prepare_deep_sleep(void) {
             ESP_LOGE(TAG, "ST7789 Sleep In 失败: %s", esp_err_to_name(e));
             if (first_error == ESP_OK) first_error = e;
         }
+        vTaskDelay(pdMS_TO_TICKS(10));
     }
 
     bsp_display_backlight(0);
