@@ -40,6 +40,15 @@ run_static_checks() {
         tests/test_bsp_es8311_sleep_check.c components/bsp/src/bsp_es8311_sleep_check.c \
         -o "${test_dir}/test_bsp_es8311_sleep_check"
     "${test_dir}/test_bsp_es8311_sleep_check"
+    "${CC:-cc}" -std=c11 -Wall -Wextra -Werror -Imain \
+        tests/test_tianshang_sim.c main/tianshang_sim.c \
+        -o "${test_dir}/test_tianshang_sim"
+    "${test_dir}/test_tianshang_sim"
+    "${CC:-cc}" -std=c11 -Wall -Wextra -Werror -Imain \
+        tests/test_tianshang_store.c main/tianshang_store.c main/tianshang_sim.c \
+        -o "${test_dir}/test_tianshang_store"
+    "${test_dir}/test_tianshang_store"
+    PYTHONDONTWRITEBYTECODE=1 python3 tests/test_font_coverage.py
     PYTHONDONTWRITEBYTECODE=1 python3 tests/test_deep_sleep_contract.py
     PYTHONDONTWRITEBYTECODE=1 python3 tests/test_check_repo.py
     PYTHONDONTWRITEBYTECODE=1 python3 tests/test_verify_firmware.py
@@ -58,6 +67,7 @@ run_firmware_checks() (
     validation_build_dir="$(mktemp -d /tmp/ai-passport-firmware.XXXXXX)"
     trap 'case "${validation_build_dir}" in /tmp/ai-passport-firmware.*) rm -rf -- "${validation_build_dir}" ;; esac' EXIT
 
+    IDF_COMPONENT_STORAGE_URL="${IDF_COMPONENT_STORAGE_URL:-https://components-file.espressif.cn/}" \
     SDKCONFIG_DEFAULTS="${repo_root}/sdkconfig.defaults" \
         idf.py -B "${validation_build_dir}" \
         -D "SDKCONFIG=${validation_build_dir}/sdkconfig" build

@@ -1,16 +1,13 @@
 idf_component_register(
     SRCS "main.c"
-         "demo_navigation.c"
-         "ui_pixel.c"
-         "ui_pixel_math.c"
-         "demo_display.c"
-         "demo_button.c"
-         "demo_audio.c"
-         "demo_battery.c"
-         "demo_radio.c"
-         "demo_wifi.c"
-         "demo_ble.c"
-         "demo_low_power.c"
+         "tianshang_sim.c"
+         "tianshang_store.c"
+         "tianshang_ui.c"
+         "tianshang_audio.c"
+         "tianshang_sfx_data.c"
+         "tianshang_img_assets.c"
+         "font_tianshang_14.c"
+         "font_tianshang_20.c"
     INCLUDE_DIRS "."
-    REQUIRES bsp bt esp_event esp_hw_support esp_netif esp_timer esp_wifi nvs_flash
+    REQUIRES bsp esp_event esp_hw_support esp_timer nvs_flash
 )
