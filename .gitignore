@@ -1,4 +1,11 @@
-build/
+build/*
+!build/FoloToy-AI-Passport-full.bin
+!build/tianshang_prototype.html
+!build/cover.png
+!build/instructions_en.txt
+!build/instructions_zh.txt
+!build/bench_*
+!build/capture_boot.py
 sdkconfig
 sdkconfig.old
 managed_components/

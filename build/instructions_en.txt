@@ -1,0 +1,5 @@
+1. Preparation: This is a completely offline handheld game. Power on to play immediately—no Wi-Fi setup or phone connection required.
+2. Start Drawing: On the main screen, press the [▲ Up Button] for a single draw or the [▼ Down Button] for a 10-pull. Each draw increases your pity counter.
+3. Tianshang Drops: When drawing rare Tianshang items or mounts, a special chime will play and the result will be highlighted on screen.
+4. Results & Return: On the draw result screen, short press the [● Center Button] to return to the main screen, or press Up/Down to draw again immediately.
+5. Stats & Reset: Short press [● Center Button] on the main screen to view your battle report and statistics. Long press [● Center Button] to reset all data.
