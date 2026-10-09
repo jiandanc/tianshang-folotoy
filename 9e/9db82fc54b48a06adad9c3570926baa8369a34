@@ -1,0 +1,20 @@
+components/bsp/src/bsp_display.c
+  s_bee23266f40341::t_82e82a45b835c5 171-178
+  s_bee23266f40341::t_22d3f84298c70e 267
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.45-trip",
+  "base_commit_sha": "9e9db82fc54b48a06adad9c3570926baa8369a34",
+  "prompts": {},
+  "sessions": {
+    "s_bee23266f40341": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "676cce46-96d0-4a69-8a91-b98e0ea37739",
+        "model": "gemini-3.8-flash"
+      },
+      "human_author": "junpengchen <junpengchen@trip.com>"
+    }
+  }
+}
