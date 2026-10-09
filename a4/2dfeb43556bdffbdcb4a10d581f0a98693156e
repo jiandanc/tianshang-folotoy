@@ -1,0 +1,54 @@
+build/bench_parity.js
+  s_84551de925c071::t_66e9e0a0af7503 49,51
+  s_84551de925c071::t_36a9b2a547f9d2 1-48,50,52-79
+.gitignore
+  s_800de370d1aa28::t_9863f29be7c95d 1-8
+build/capture_boot.py
+  s_84551de925c071::t_f9f8319ba9731e 1-28
+build/instructions_zh.txt
+  s_b66ffa765ed27d::t_b99ab82f486b21 1-5
+build/bench_rates.c
+  s_84551de925c071::t_cb5b959209f380 1-58
+build/tianshang_prototype.html
+  s_800de370d1aa28::t_2e32b8a665c208 1-1525
+build/bench_rates.js
+  s_84551de925c071::t_8ef405756ce2b1 1-62
+build/instructions_en.txt
+  s_b66ffa765ed27d::t_bf0d9f9bc47288 1-5
+build/bench_prototype.js
+  s_84551de925c071::t_43d0299747910c 1-14,16-55,57-84
+  s_84551de925c071::t_da68f51108aa9b 56
+  s_84551de925c071::t_1bf6fc90a28bf3 15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.45-trip",
+  "base_commit_sha": "a42dfeb43556bdffbdcb4a10d581f0a98693156e",
+  "prompts": {},
+  "sessions": {
+    "s_800de370d1aa28": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9770b7c4-0a23-4fd4-9209-4c15fb81ef36",
+        "model": "gemini-3.8-flash-control"
+      },
+      "human_author": "junpengchen <junpengchen@trip.com>"
+    },
+    "s_84551de925c071": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "36862db8-0d65-4699-a501-1f92aad2c1fd",
+        "model": "deepseek-v4.1-flash"
+      },
+      "human_author": "junpengchen <junpengchen@trip.com>"
+    },
+    "s_b66ffa765ed27d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6e515dc2-64e4-4633-9b06-43c565dda77f",
+        "model": "gemini-3.8-flash-control"
+      },
+      "human_author": "junpengchen <junpengchen@trip.com>"
+    }
+  }
+}
