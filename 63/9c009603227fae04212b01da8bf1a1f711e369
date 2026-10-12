@@ -1,0 +1,21 @@
+docs/fork-guide.md
+  s_698dccdb17d494::t_f85bdc67b1b21b 28
+docs/fork-guide.zh_CN.md
+  s_698dccdb17d494::t_e7376e3cf55b37 35,37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.45-trip",
+  "base_commit_sha": "639c009603227fae04212b01da8bf1a1f711e369",
+  "prompts": {},
+  "sessions": {
+    "s_698dccdb17d494": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1c0cd17b-1933-485f-9cc0-d1ae1d072ca1",
+        "model": "deepseek-ai/DeepSeek-V4.1-Flash"
+      },
+      "human_author": "junpengchen <junpengchen@trip.com>"
+    }
+  }
+}
