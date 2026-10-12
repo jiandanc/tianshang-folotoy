@@ -25,8 +25,7 @@ The root `README.md` path is intentionally available to a fork owner. Upstream's
 - Keep fork `main` synchronized with `FoloToy/ai-passport:main`.
 - On fork `main`, limit fork-owned content to a root `README.md` pair and `docs/assets/`; develop firmware and other changes on `feature/*` branches and merge by pull request.
 - **Before starting a new project, create the `feature/*` branch from a base that stays aligned with `FoloToy/ai-passport:main`.** Use the latest upstream `main` as the branch-off point (e.g. fetch upstream then branch from `upstream/main`), not the fork's own `main` — the fork `main` may be stale or unable to sync. This keeps every new project on the current upstream baseline and avoids basing work on a stale or diverged fork `main`.
-- Enable GitHub Actions manually after forking. The upstream-sync workflow is disabled by GitHub until the fork owner enables it.
-- If development must happen directly on `main`, disable `.github/workflows/sync-main.yml` first to prevent automatic merge conflicts.
+- Enable GitHub Actions manually after forking; GitHub disables a fork's workflows until the fork owner enables them.
 
 Use `docs/assets/` for architecture notes, product design, and images that supplement a fork's README. Upstream keeps that directory empty except for `.gitkeep`; fork-private content must not be proposed back to upstream.
 
